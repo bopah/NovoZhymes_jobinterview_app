@@ -48,3 +48,25 @@ def get_pokemon_stats(generation_dropdown,strongest_weakest_dropdown):
         filter = filter_name_rows(weakest_index)
         data = filter.to_dict('records') # Converting the row to a dictionary so it can be used in 'dash_table.DataTable-data' property
         return data
+
+
+# Returns a dictionary of a new row-dataset with only actual stats (i.e no 'name) to be used in a graph.
+# The new dataset consists of the average stats of all pokemons from the selected Generation-dataset-dropdown.
+def average_stats_graph(generation_dropdown):
+    df_generation = read_gen_db(generation_dropdown)
+    first_index_value = df_generation.iloc[0,0]-1 # -1 since we 0-index
+    last_index_value = df_generation.iloc[-1, 0]
+
+    # Finding the mean/average of every stat column
+    avg_total = DF_STATS.iloc[first_index_value:last_index_value]['total'].mean()
+    avg_hp = DF_STATS.iloc[first_index_value:last_index_value]['hp'].mean()
+    avg_attack = DF_STATS.iloc[first_index_value:last_index_value]['attack'].mean()
+    avg_defense = DF_STATS.iloc[first_index_value:last_index_value]['defense'].mean()
+    avg_sp_atk = DF_STATS.iloc[first_index_value:last_index_value]['sp_atk'].mean()
+    avg_sp_def = DF_STATS.iloc[first_index_value:last_index_value]['sp_def'].mean()
+    avg_speed = DF_STATS.iloc[first_index_value:last_index_value]['speed'].mean()
+
+    # The new row dictionary
+    avg_row = {'x': ['total', 'hp', 'attack', 'defense', 'sp_atk', 'sp_def', 'speed'],
+               'y': [avg_total, avg_hp, avg_attack, avg_defense, avg_sp_atk, avg_sp_def, avg_speed], 'type': 'bar', 'name': 'AVG '+generation_dropdown}
+    return avg_row

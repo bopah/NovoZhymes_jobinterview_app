@@ -40,7 +40,21 @@ app.layout = html.Div([
         style = {'margin-left': '60px'} # Moving the two dropdowns further to the right
         ),
 
-    ]
+        # Wrapping stats+image+graph
+        html.Div(children = [
+            html.Label("Stats"),
+            dash_table.DataTable(
+                        id = 'Stats',
+                        page_size = 1,
+                        style_cell = {"width": "5%"}
+            ),
+            html.Img(id = 'Pokemon_image'), # Add the image here
+            dcc.Graph(id = 'Graph') # Add the graph here
+        ],
+        style = {'margin-left': '40px'} # Shrinking width of cells. And moving entire table further to the right
+        )
+    ],
+    style={'display': 'flex', 'flex-direction': 'row'} # Placing the two wrapped components side by side
     )
 ])
 

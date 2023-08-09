@@ -10,6 +10,7 @@ drop_duplicates_stats = read_stats.drop_duplicates(subset=['name'])
 delete_form = drop_duplicates_stats.drop('form', axis=1)
 DF_STATS = delete_form.sort_values(by=read_stats.columns[0]) # Data Frame of all pokemon stats, which is sorted according to pokemon-index
 
+
 # Read 1 of the 10 generation-database into a pandas dataFrame.
 def read_gen_db(generation_dropdown):
     if generation_dropdown == 'All Time':
@@ -22,11 +23,19 @@ def read_gen_db(generation_dropdown):
         df_sort = df.sort_values(by=df.columns[0]) # Sort generation-data based on the first column (pokemon index)
         return df_sort
 
+
 # Filters all the rows for a specific name.
 def filter_name_rows(row_index):
     name = DF_STATS.loc[row_index, 'name'] # the value of the 'name' column
     filter = DF_STATS[DF_STATS['name'] == name] # filtering the entire data set, so we only have a dataset with 1 row
     return filter
+
+
+# Return path an image of the pokemon
+def pokemon_image(pokemon_stats):
+    name = pokemon_stats[0]['name'] # pokemon_stats is a list of dictionaries with only 1 element, which is why we '[0]'
+    src ='/images/' + name + '.png'
+    return src
 
 
 # We have 9 different Generation-datasets, and 1 stats-dataset which includes all the pokemons from all the generations.

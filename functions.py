@@ -34,7 +34,7 @@ def filter_name_rows(row_index):
 # Return path an image of the pokemon
 def pokemon_image(pokemon_stats):
     name = pokemon_stats[0]['name'] # pokemon_stats is a list of dictionaries with only 1 element, which is why we '[0]'
-    src ='/images/' + name + '.png'
+    src ='/assets/' + name + '.png'
     return src
 
 

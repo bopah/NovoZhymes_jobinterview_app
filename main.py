@@ -1,4 +1,5 @@
 from dash import Dash, dcc, html, dash_table, Input, Output
+import functions
 
 app = Dash(__name__)
 
@@ -68,7 +69,32 @@ app.layout = html.Div([
 )
 
 def update(generation_dropdown, strongest_Weakest_dropdown):
-    return
+    # First output, which changes the stats table
+    pokemon_stats = functions.get_pokemon_stats(generation_dropdown,strongest_Weakest_dropdown)
+
+    # Second output, which changes stats graph
+    pokemon_image = functions.pokemon_image(pokemon_stats)
+
+    # third output which changes image
+    avg_stats = functions.average_stats_graph(generation_dropdown)
+    pokemon_stats_graph = functions.pokemon_stats_graph(generation_dropdown,strongest_Weakest_dropdown)
+    stats_graph = [avg_stats,pokemon_stats_graph]
+    figure_data = {
+        'data': stats_graph,
+        'layout': {
+            'xaxis': {
+                'showgrid': True,
+                'gridcolor': 'lightgray'
+            },
+            'yaxis': {
+                'showgrid': True,
+                'gridcolor': 'lightgray',
+                'dtick': 100
+            },
+            'title': 'Comparison of Pokémon Stats: Average of selected Generation vs. Resulting Pokémon'
+        }
+    }
+    return pokemon_stats, pokemon_image, figure_data
 
 
 

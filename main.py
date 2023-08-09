@@ -4,7 +4,9 @@ app = Dash(__name__)
 
 app.layout = html.Div([
     # Title
-    html.H1(children = "Explore the stats of the strongest or weakest Pokémon from each generation", style = {'fontSize': '40px', 'textAlign': 'center'}),
+    html.H1(children = "Explore the stats of the strongest or weakest Pokémon from each generation",
+            style = {'fontSize': '40px', 'textAlign': 'center'}
+    ),
 ])
 
 

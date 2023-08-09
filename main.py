@@ -26,9 +26,19 @@ app.layout = html.Div([
                         ],
                         value = 'Generation 1',
                         style = {'width': '200px'}, clearable= False
+            ),
+            html.Label("Choose strongest or weakest"),
+            dcc.Dropdown(id = 'Strongest_Weakest_dropdown',
+                        options = [
+                            {'label': 'Strongest', 'value': 'Strongest'},
+                            {'label': 'Weakest', 'value': 'Weakest'},
+                        ],
+                        value = 'Strongest',
+                        style = {'width': '200px'}, clearable= False
             )
-        ]
-        )
+        ],
+        style = {'margin-left': '60px'} # Moving the two dropdowns further to the right
+        ),
 
     ]
     )

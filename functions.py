@@ -27,3 +27,24 @@ def filter_name_rows(row_index):
     name = DF_STATS.loc[row_index, 'name'] # the value of the 'name' column
     filter = DF_STATS[DF_STATS['name'] == name] # filtering the entire data set, so we only have a dataset with 1 row
     return filter
+
+
+# We have 9 different Generation-datasets, and 1 stats-dataset which includes all the pokemons from all the generations.
+# Finds the amount of pokemons in the selected generation by finding the first and last pokemon-index and then apply slicing.
+# Then we use the stats-dataset to find the max/min of the 'total'-column, from first to last pokemon-index.
+# Returns a list of dictionaries of one specific row from the stats-dataset (so a list with only 1 element).
+def get_pokemon_stats(generation_dropdown,strongest_weakest_dropdown):
+    df_generation = read_gen_db(generation_dropdown)
+    first_index_value = df_generation.iloc[0,0]-1 # -1 since we 0-index
+    last_index_value = df_generation.iloc[-1, 0]
+
+    if strongest_weakest_dropdown == 'Strongest':
+        strongest_index = DF_STATS.iloc[first_index_value:last_index_value]['total'].idxmax() # idx of the row with MAX-value in 'total' column
+        filter = filter_name_rows(strongest_index)
+        data = filter.to_dict('records') # Converting the row to a dictionary so it can be used in 'dash_table.DataTable-data' property
+        return data
+    elif strongest_weakest_dropdown == 'Weakest':
+        weakest_index = DF_STATS.iloc[first_index_value:last_index_value]['total'].idxmin() # idx of the row with MIN-value in 'total' column
+        filter = filter_name_rows(weakest_index)
+        data = filter.to_dict('records') # Converting the row to a dictionary so it can be used in 'dash_table.DataTable-data' property
+        return data

@@ -58,6 +58,18 @@ app.layout = html.Div([
     )
 ])
 
+# Callback for updating stats and graph
+@app.callback(
+    Output(component_id = 'Stats', component_property = 'data'),
+    Output(component_id = 'Pokemon_image', component_property = 'src'),
+    Output(component_id = 'Graph', component_property = 'figure'),
+    Input(component_id = 'Gen_dropdown', component_property = 'value'),
+    Input(component_id = 'Strongest_Weakest_dropdown', component_property = 'value')
+)
+
+def update(generation_dropdown, strongest_Weakest_dropdown):
+    return
+
 
 
 if __name__ == '__main__':

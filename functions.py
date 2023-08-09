@@ -70,3 +70,38 @@ def average_stats_graph(generation_dropdown):
     avg_row = {'x': ['total', 'hp', 'attack', 'defense', 'sp_atk', 'sp_def', 'speed'],
                'y': [avg_total, avg_hp, avg_attack, avg_defense, avg_sp_atk, avg_sp_def, avg_speed], 'type': 'bar', 'name': 'AVG '+generation_dropdown}
     return avg_row
+
+
+# Helper function for pokemon_stats_graph
+def helper_pokemon_stats_graph(data_row):
+    total = data_row.iloc[0, data_row.columns.get_loc('total')]
+    hp = data_row.iloc[0, data_row.columns.get_loc('hp')]
+    attack = data_row.iloc[0, data_row.columns.get_loc('attack')]
+    defense = data_row.iloc[0, data_row.columns.get_loc('defense')]
+    sp_atk = data_row.iloc[0, data_row.columns.get_loc('sp_atk')]
+    sp_def = data_row.iloc[0, data_row.columns.get_loc('sp_def')]
+    speed = data_row.iloc[0, data_row.columns.get_loc('speed')]
+    name = data_row.iloc[0, data_row.columns.get_loc('name')]
+
+    new_row = {'x': ['total', 'hp', 'attack', 'defense', 'sp_atk', 'sp_def', 'speed'],
+            'y': [total, hp, attack, defense, sp_atk, sp_def, speed], 'type': 'bar', 'name': name}
+    return new_row
+
+# Returns a dictionary of a new row-dataset with only actual stats (i.e no 'name) to be used in a graph.
+# The new dataset consists of the stats of the selected strongest/weakest pokemon
+def pokemon_stats_graph(generation_dropdown,strongest_weakest_dropdown):
+    # Read a dataset into a pandas Data Frame
+    df_generation = read_gen_db(generation_dropdown)
+    first_index_value = df_generation.iloc[0,0]-1 # -1 since we 0-index
+    last_index_value = df_generation.iloc[-1, 0]
+
+    if strongest_weakest_dropdown == 'Strongest':
+        strongest_index = DF_STATS.iloc[first_index_value:last_index_value]['total'].idxmax() # idx of the row with max-value in 'total' column
+        filter = filter_name_rows(strongest_index)
+        new_row = helper_pokemon_stats_graph(filter)
+        return new_row
+    elif strongest_weakest_dropdown == 'Weakest':
+        weakest_index = DF_STATS.iloc[first_index_value:last_index_value]['total'].idxmin() # idx of the row with min-value in 'total' column
+        filter = filter_name_rows(weakest_index)
+        new_row = helper_pokemon_stats_graph(filter)
+        return new_row

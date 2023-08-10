@@ -39,7 +39,7 @@ Open a web browser. In the address bar, copy and paste the url and then press en
 docker stop <container_id>
 <br />
 
-**Using the Dockerized Pokémon Dash App to run tests**
+**Using the Dockerized Pokémon Dash App to run unit tests**
 
 1. In docker desktop app, navigate to 'Containers' tab in top left corner.
 
@@ -75,7 +75,7 @@ python main.py
 
 8. To stop the application, press Ctrl+C in the terminal, and then deactivate the virtual environment: <br />
 deactivate
-
+<br />
 
 **Running unit tests**
 

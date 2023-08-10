@@ -27,8 +27,7 @@ This project aims to provide an interactive application that allows users to exp
 1. Docker: Make sure you have Docker installed on your system
 
 2. Pull the Docker Image. Open a terminal/command prompt and run the following command:
-
-   docker pull bopah91/my-pokemon-dash-app
+docker pull bopah91/my-pokemon-dash-app
 
 3. Run the Docker container with the following command. This will start the Pokémon Dash App within a Docker container:
    docker run -p 8050:8050 bopah91/my-pokemon-dash-app

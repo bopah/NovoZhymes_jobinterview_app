@@ -1,4 +1,5 @@
 **Problem Statement**
+
 This project aims to provide an interactive application that allows users to explore and compare the statistical attributes of Pokémon from different generations. The primary objective is to enable users to analyze the strongest and weakest Pokémon within a chosen generation, and to visualize their individual and average statistics through graphs and tables.
 
 **Objectives**

@@ -20,6 +20,34 @@ This project aims to provide an interactive application that allows users to exp
 - **Dockerization**: Dockerize the application to enable seamless deployment across different environments with minimal dependencies.
 
 
+**Using the Dockerized Pokémon Dash App**
+
+1. Docker: Make sure you have Docker installed on your system
+
+2. Pull the Docker Image. Open a terminal/command prompt and run the following command:
+   docker pull bopah91/my-pokemon-dash-app
+
+3. Run the Docker container with the following command. This will start the Pokémon Dash App within a Docker container:
+   docker run -p 8050:8050 bopah91/my-pokemon-dash-app
+
+4. Access the Application:
+   Open a web browser. In the address bar, copy and paste the url and then press enter: http://localhost:8050
+
+5. To stop the running container, find its container ID using 'docker ps' and then use the following command:
+   docker stop <container_id>
+
+**Using the Dockerized Pokémon Dash App to run tests**
+
+1. In docker desktop app, navigate to 'Containers' tab in top left corner.
+
+2. Find under 'Image' bopah91/my-pokemon-dash-app and click on it.
+
+3. Then click run in top left corner, and then click run again.
+
+4. Then click on terminal and write+enter:
+   pytest test_functions.py
+
+
 **Running the Application in a terminal with Virtual Environment**
 
 1. Open a terminal or command prompt.

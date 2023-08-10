@@ -43,3 +43,15 @@ def test_average_stats_graph():
     assert avg_row['name'] == 'AVG Generation 1'
     assert len(avg_row['x']) == 7
     assert len(avg_row['y']) == 7
+
+
+def test_pokemon_stats_graph():
+    new_row_strongest = functions.pokemon_stats_graph('Generation 1', 'Strongest')
+    assert isinstance(new_row_strongest, dict)
+    assert len(new_row_strongest['x']) == 7
+    assert len(new_row_strongest['y']) == 7
+
+    new_row_weakest = functions.pokemon_stats_graph('Generation 1', 'Weakest')
+    assert isinstance(new_row_weakest, dict)
+    assert len(new_row_weakest['x']) == 7
+    assert len(new_row_weakest['y']) == 7

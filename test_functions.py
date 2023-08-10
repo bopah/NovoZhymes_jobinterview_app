@@ -18,6 +18,13 @@ def test_filter_name_rows():
     assert filtered_df.iloc[0]['name'] == functions.DF_STATS.loc[row_index, 'name']
 
 
+def test_pokemon_image():
+    pokemon_stats = [{'name': 'Pikachu'}]
+    src = functions.pokemon_image(pokemon_stats)
+    assert isinstance(src, str)
+    assert src == '/assets/Pikachu.png'
+
+
 def test_get_pokemon_stats():
     # Test Strongest - We have 1 row / 1 element in list
     data_strongest = functions.get_pokemon_stats('Generation 1', 'Strongest')

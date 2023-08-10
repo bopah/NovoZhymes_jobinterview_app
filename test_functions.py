@@ -36,4 +36,10 @@ def test_get_pokemon_stats():
     assert isinstance(data_weakest, list)
     assert len(data_weakest) == 1
 
-    # Add more test cases as needed
+
+def test_average_stats_graph():
+    avg_row = functions.average_stats_graph('Generation 1')
+    assert isinstance(avg_row, dict)
+    assert avg_row['name'] == 'AVG Generation 1'
+    assert len(avg_row['x']) == 7
+    assert len(avg_row['y']) == 7

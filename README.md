@@ -30,13 +30,13 @@ This project aims to provide an interactive application that allows users to exp
 docker pull bopah91/my-pokemon-dash-app
 
 3. Run the Docker container with the following command. This will start the Pokémon Dash App within a Docker container: <br />
-   docker run -p 8050:8050 bopah91/my-pokemon-dash-app
+docker run -p 8050:8050 bopah91/my-pokemon-dash-app
 
 4. Access the Application: <br />
-   Open a web browser. In the address bar, copy and paste the url and then press enter: http://localhost:8050
+Open a web browser. In the address bar, copy and paste the url and then press enter: http://localhost:8050
 
-5. To stop the running container, find its container ID using 'docker ps' and then use the following command:
-   docker stop <container_id>
+5. To stop the running container, find its container ID using 'docker ps' and then use the following command: <br />
+docker stop <container_id>
 
 **Using the Dockerized Pokémon Dash App to run tests**
 
@@ -46,8 +46,8 @@ docker pull bopah91/my-pokemon-dash-app
 
 3. Then click run in top left corner, and then click run again.
 
-4. Then click on terminal and write+enter:
-   pytest test_functions.py
+4. Then click on terminal and write+enter: <br />
+pytest test_functions.py
 
 
 **Running the Application in a terminal with Virtual Environment**
@@ -56,30 +56,30 @@ docker pull bopah91/my-pokemon-dash-app
 
 2. Navigate to the directory with the 'main.py' file location
 
-3. Create a virtual environment:
-   python -m venv myenv
+3. Create a virtual environment: <br />
+python -m venv myenv
 
-4. Activate the virtual environment:
-   myenv\Scripts\activate
+4. Activate the virtual environment: <br />
+myenv\Scripts\activate
 
-5. Install required dependencies using the provided requirements.txt file:
-   pip install -r requirements.txt
+5. Install required dependencies using the provided requirements.txt file: <br />
+pip install -r requirements.txt
 
-6. Run the application:
-   python main.py
+6. Run the application: <br />
+python main.py
 
 7. Open a web browser. In the address bar, copy and paste the url and then press enter: http://localhost:8050
 
-8. To stop the application, press Ctrl+C in the terminal, and then deactivate the virtual environment:
-   deactivate
+8. To stop the application, press Ctrl+C in the terminal, and then deactivate the virtual environment: <br />
+deactivate
 
 
 **Running unit tests**
 
 1. If you have not already done step 1 to 5 from above, then do them.
 
-2. Run the unit tests:
-   pytest test_functions.py
+2. Run the unit tests: <br />
+pytest test_functions.py
 
-3. Decativate virtual environment:
-   deactivate
+3. Decativate virtual environment: <br />
+deactivate

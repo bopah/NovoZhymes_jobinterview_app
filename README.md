@@ -20,11 +20,14 @@ This project aims to provide an interactive application that allows users to exp
 - **Dockerization**: Dockerize the application to enable seamless deployment across different environments with minimal dependencies.
 
 
+
+
 **Using the Dockerized Pokémon Dash App**
 
 1. Docker: Make sure you have Docker installed on your system
 
 2. Pull the Docker Image. Open a terminal/command prompt and run the following command:
+
    docker pull bopah91/my-pokemon-dash-app
 
 3. Run the Docker container with the following command. This will start the Pokémon Dash App within a Docker container:

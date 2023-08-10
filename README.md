@@ -18,3 +18,38 @@ This project aims to provide an interactive application that allows users to exp
 - **Unit Testing**: Implement unit tests to verify the correctness of critical functionalities, ensuring reliable and accurate results.
 
 - **Dockerization**: Dockerize the application to enable seamless deployment across different environments with minimal dependencies.
+
+
+**Running the Application in a terminal with Virtual Environment**
+
+1. Open a terminal or command prompt.
+
+2. Navigate to the directory with the 'main.py' file location
+
+3. Create a virtual environment:
+   python -m venv myenv
+
+4. Activate the virtual environment:
+   myenv\Scripts\activate
+
+5. Install required dependencies using the provided requirements.txt file:
+   pip install -r requirements.txt
+
+6. Run the application:
+   python main.py
+
+7. Open a web browser. In the address bar, copy and paste the url and then press enter: http://localhost:8050
+
+8. To stop the application, press Ctrl+C in the terminal, and then deactivate the virtual environment:
+   deactivate
+
+
+**Running unit tests**
+
+1. If you have not already done step 1 to 5 from above, then do them.
+
+2. Run the unit tests:
+   pytest test_functions.py
+
+3. Decativate virtual environment:
+   deactivate

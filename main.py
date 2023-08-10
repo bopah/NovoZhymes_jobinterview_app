@@ -99,4 +99,4 @@ def update(generation_dropdown, strongest_Weakest_dropdown):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=8050)

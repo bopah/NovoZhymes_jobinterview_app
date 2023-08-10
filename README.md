@@ -32,8 +32,7 @@ docker pull bopah91/my-pokemon-dash-app
 3. Run the Docker container with the following command. This will start the Pokémon Dash App within a Docker container: <br />
 docker run -p 8050:8050 bopah91/my-pokemon-dash-app
 
-4. Access the Application: <br />
-Open a web browser. In the address bar, copy and paste the url and then press enter: http://localhost:8050
+4. Open a web browser. In the address bar, copy and paste the url and then press enter: http://localhost:8050
 
 5. To stop the running container, find its container ID using 'docker ps' and then use the following command: <br />
 docker stop <container_id>
@@ -45,7 +44,7 @@ docker stop <container_id>
 
 2. Find under 'Image' bopah91/my-pokemon-dash-app and click on it.
 
-3. Then click run in top left corner, and then click run again.
+3. Then click run in top right corner, and then click run again.
 
 4. Then click on terminal and write+enter: <br />
 pytest test_functions.py

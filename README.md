@@ -18,9 +18,9 @@ This project aims to provide an interactive application that allows users to exp
 - **Unit Testing**: Implement unit tests to verify the correctness of critical functionalities, ensuring reliable and accurate results.
 
 - **Dockerization**: Dockerize the application to enable seamless deployment across different environments with minimal dependencies.
-
-
-
+<br />
+<br />
+<br />
 
 **Using the Dockerized Pokémon Dash App**
 
@@ -37,6 +37,7 @@ Open a web browser. In the address bar, copy and paste the url and then press en
 
 5. To stop the running container, find its container ID using 'docker ps' and then use the following command: <br />
 docker stop <container_id>
+<br />
 
 **Using the Dockerized Pokémon Dash App to run tests**
 
@@ -48,7 +49,9 @@ docker stop <container_id>
 
 4. Then click on terminal and write+enter: <br />
 pytest test_functions.py
-
+<br />
+<br />
+<br />
 
 **Running the Application in a terminal with Virtual Environment**
 

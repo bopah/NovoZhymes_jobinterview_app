@@ -28,9 +28,7 @@ This project aims to provide an interactive application that allows users to exp
 
 2. Open a terminal/command prompt and run the following command: <br />
 <pre>
-```
 docker pull bopah91/my-pokemon-dash-app
-```
 </pre>
 
 
@@ -52,7 +50,12 @@ docker stop <container_id>
 3. Then click run in top right corner, and then click run again.
 
 4. Then click on terminal and write+enter: <br />
+<pre>
+```python
 pytest test_functions.py
+```
+</pre>
+
 <br />
 <br />
 <br />

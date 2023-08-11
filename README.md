@@ -24,15 +24,20 @@ This project aims to provide an interactive application that allows users to exp
 
 **Using the Dockerized Pokémon Dash App**
 
-1. Docker: Make sure you have Docker installed on your system
+1. Make sure you have Docker installed and running on your system
 
-2. Pull the Docker Image. Open a terminal/command prompt and run the following command: <br />
+2. Open a terminal/command prompt and run the following command: <br />
+<pre>
+```
 docker pull bopah91/my-pokemon-dash-app
+```
+</pre>
 
-3. Run the Docker container with the following command. This will start the Pokémon Dash App within a Docker container: <br />
+
+3. Run the Docker container with the following command: <br />
 docker run -p 8050:8050 bopah91/my-pokemon-dash-app
 
-4. Open a web browser. In the address bar, copy and paste the url and then press enter: http://localhost:8050
+4. Open a web browser. In the address bar, copy and paste the url http://localhost:8050 and then press enter
 
 5. To stop the running container, find its container ID using 'docker ps' and then use the following command: <br />
 docker stop <container_id>
@@ -70,7 +75,7 @@ pip install -r requirements.txt
 6. Run the application: <br />
 python main.py
 
-7. Open a web browser. In the address bar, copy and paste the url and then press enter: http://localhost:8050
+7. Open a web browser. In the address bar, copy and paste the url http://localhost:8050 and then press enter
 
 8. To stop the application, press Ctrl+C in the terminal, and then deactivate the virtual environment: <br />
 deactivate
@@ -83,5 +88,5 @@ deactivate
 2. Run the unit tests: <br />
 pytest test_functions.py
 
-3. Decativate virtual environment: <br />
+3. Deactivate virtual environment: <br />
 deactivate

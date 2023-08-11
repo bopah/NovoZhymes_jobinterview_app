@@ -27,10 +27,7 @@ This project aims to provide an interactive application that allows users to exp
 1. Make sure you have Docker installed and running on your system
 
 2. Open a terminal/command prompt and run the following command: <br />
-<pre>
 docker pull bopah91/my-pokemon-dash-app
-</pre>
-
 
 3. Run the Docker container with the following command: <br />
 docker run -p 8050:8050 bopah91/my-pokemon-dash-app
@@ -50,11 +47,7 @@ docker stop <container_id>
 3. Then click run in top right corner, and then click run again.
 
 4. Then click on terminal and write+enter: <br />
-<pre>
-```python
 pytest test_functions.py
-```
-</pre>
 
 <br />
 <br />

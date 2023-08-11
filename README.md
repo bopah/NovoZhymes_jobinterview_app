@@ -27,10 +27,10 @@ This project aims to provide an interactive application that allows users to exp
 1. Make sure you have Docker installed and running on your system
 
 2. Open a terminal/command prompt and run the following command: <br />
-docker pull bopah91/my-pokemon-dash-app
+docker pull bopah91/my-pokemon-dash-app:v1
 
 3. Run the Docker container with the following command: <br />
-docker run -p 8050:8050 bopah91/my-pokemon-dash-app
+docker run -p 8050:8050 bopah91/my-pokemon-dash-app:v1
 
 4. Open a web browser. In the address bar, copy and paste the url http://localhost:8050 and then press enter
 

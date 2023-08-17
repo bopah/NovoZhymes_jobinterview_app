@@ -49,10 +49,10 @@ app.layout = html.Div([
             html.Img(id='Pokemon_image'),  # Add the image here
             dcc.Graph(id='Graph')  # Add the graph here
         ],
-            style={'margin-left': '40px'}  # Shrinking width of cells. And moving entire table further to the right
+            style={'margin-left': '40px'}  # Moving stats+image+graph components further to the right
         )
     ],
-        style={'display': 'flex', 'flex-direction': 'row'}  # Placing the two wrapped components side by side
+        style={'display': 'flex', 'flex-direction': 'row'}  # Placing the two wrapped components (dropdowns and stats+image+graph) side by side
     )
 ])
 

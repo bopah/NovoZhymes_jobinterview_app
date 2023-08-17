@@ -21,7 +21,7 @@ def read_gen_db(generation_dropdown):
         df_sort = df.sort_values(by=df.columns[0])  # Sort generation-data based on the first column (pokemon index)
         return df_sort
 
-# Filters all the rows for a specific name.
+# Filters all the rows for a specific name. Returns a dataset with 1 row.
 def filter_name_rows(row_index):
     name = DF_STATS.loc[row_index, 'name']  # the value of the 'name' column
     filter = DF_STATS[DF_STATS['name'] == name]  # filtering the entire data set, so we only have a dataset with 1 row
@@ -71,7 +71,8 @@ def average_stats_graph(generation_dropdown):
 
     # The new row dictionary
     avg_row = {'x': ['total', 'hp', 'attack', 'defense', 'sp_atk', 'sp_def', 'speed'],
-               'y': [avg_total, avg_hp, avg_attack, avg_defense, avg_sp_atk, avg_sp_def, avg_speed], 'type': 'bar', 'name': 'AVG ' + generation_dropdown}
+               'y': [avg_total, avg_hp, avg_attack, avg_defense, avg_sp_atk, avg_sp_def, avg_speed],
+               'type': 'bar', 'name': 'AVG ' + generation_dropdown}
     return avg_row
 
 # Helper function for pokemon_stats_graph
@@ -86,7 +87,8 @@ def helper_pokemon_stats_graph(data_row):
     name = data_row.iloc[0, data_row.columns.get_loc('name')]
 
     new_row = {'x': ['total', 'hp', 'attack', 'defense', 'sp_atk', 'sp_def', 'speed'],
-               'y': [total, hp, attack, defense, sp_atk, sp_def, speed], 'type': 'bar', 'name': name}
+               'y': [total, hp, attack, defense, sp_atk, sp_def, speed],
+               'type': 'bar', 'name': name}
     return new_row
 
 # Returns a dictionary of a new row-dataset with only actual stats (i.e no 'name) to be used in a graph.
